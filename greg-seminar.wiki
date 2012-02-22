@@ -1,5 +1,3 @@
-<[nowiki]
-
 \begin{frame}
   \titlepage
 \end{frame}
@@ -7,12 +5,40 @@
 \begin{frame}
   \tableofcontents
 \end{frame}
-
-[nowiki]>
 	
 == Background  ==
 
 === Mammalian Genomics ===
+
+==== Not My Intro ====
+
+<[center]
+<<<figs/cascade.jpg,height=.6\textheight>>>
+[center]>
+
+==== What is a Mammal? ====
+
+==== What is a Mammal? ====
+
+<[columns]
+
+[[[.45\linewidth]]]
+<[center]
+<<<figs/cute_kitten.jpg,width=.9\linewidth>>>
+
+\vspace{.3cm}
+{\huge Mammal}
+[center]>
+
+[[[.45\linewidth]]]
+<[center]
+<<<figs/aligator.jpg,width=.9\linewidth>>>
+
+\vspace{.3cm}
+{\huge Not a Mammal}
+[center]>
+
+[columns]>
 
 ==== Evolutionary History of Mammals ====
 <[columns]
@@ -140,7 +166,7 @@ range of information that can be gleaned from such studies.''}
 *# removes deleterious alleles
 *# promotes beneficial alleles
 * To detect beneficial / deleterious alleles: compare evolutionary rate to a \emph{neutral} reference
-* Same principle underlying:
+* Same principle underlies:
 *# GERP / PhastCons elements
 *# Human-accelerated regions
 *# \dnds in protein-coding genes
@@ -148,7 +174,7 @@ range of information that can be gleaned from such studies.''}
 ==== Natural Selection in Proteins ====
 
 <[center]
-<<<figs/genetic_code.png,height=.3\textheight>>>
+<<<figs/genetic_code.png,height=.35\textheight>>>
 [center]>
 
 * Degeneracy of genetic code
@@ -162,15 +188,15 @@ range of information that can be gleaned from such studies.''}
 ==== Detecting Selection with Codon Models ====
 
 <[center]
-<<<figs/codon_model.png,width=.95\linewidth>>>
+<<<figs/codon_model.png,width=.8\linewidth>>>
 [center]>
 
 * Model the evolution of DNA sequences in terms of codons
 ** Incorporate \omg$=$\dnds as a model parameter
 ** Find parameter values which best fit the data (sequence alignment)
 * Likelihood ratio tests (LRTs) for testing when \omg $\not=$ 1 produce:
-** The strength of positive or purifying selection (\omg)
-** The strength of \emph{evidence} for said selection
+** The strength of positive or purifying selection ($\hat{\omega}$)
+** The strength of \emph{evidence} for said selection (LRT score)
 
 ==== Reality Check ====
 
@@ -186,18 +212,18 @@ range of information that can be gleaned from such studies.''}
 <<<figs/rhesus_tree.png,height=.25\textheight>>>
 [center]>
 	
-* Rhesus genome analysis (2007) - LRTs for positive selection in 6 mammalian genomes
+* 2007: Rhesus genome analysis, LRTs for positive selection in 6 mammalian genomes
 
 [[[.5\linewidth]]]
 <[center]
 <<<figs/kosiol_tree.png,height=.3\textheight>>>
 [center]>
 	
-* Kosiol et al. (2008) - LRTs	in 6 mammalian genomes
+* 2008: Kosiol et al. LRTs in 6 mammalian genomes
 
 [columns]>
 
-==== Patterns of Positive Selection ====
+==== Previous Genome-Wide Studies ====
 
 * Found many positively-selected genes (PSGs) related to:
 ** Sensory perception (olfaction, hearing)
@@ -209,10 +235,31 @@ range of information that can be gleaned from such studies.''}
 ** Sexual selection / genetic conflict
 ** Functional adaptations (gene- or organism- level)
 
-==== The Major Difference Now: Scale  ====
+==== Previous Genome-Wide Studies ====
+<[center]
+<<<figs/deep_narrow.pdf,width=1\linewidth>>>
+[center]>
+
+* Deep but narrow
+* In-depth analysis, many species, one or a few genes
+
+\fn{Gibbs, HL and Rossiter, W. (2008). Rapid evolution by positive selection and gene gain and loss: PLA(2) venom genes in closely related Sistrurus rattlesnakes with divergent diets. \emph{J Mol Evol} 66, 151-166}
+
+==== Previous Genome-Wide Studies ====
+<[center]
+<<<figs/broad_shallow.pdf,width=1\linewidth>>>
+[center]>
+
+* Broad but shallow
+* Genome-wide, but limited resolution and power
+
+\fn{Rhesus Macaque Sequencing Consortium (2007). Evolutionary and biomedical insights from the Rhesus Macaque genome. \emph{Science} 316, 222-234.}
+
+==== Contrast with Previous Studies  ====
 <[center]
 <<<figs/tree_sizes.pdf,width=1\linewidth>>>
 [center]>
+
 
 ==== Questions to be Investigated ====
 
@@ -369,7 +416,7 @@ range of information that can be gleaned from such studies.''}
 
 === Combining Sitewise Estimates Across Genes and Domains ===
 
-==== The Mammalian Superorders ====
+==== Comparing Between Groups: the Mammalian Superorders ====
 <[center]
 <<<figs/tree_sizes_2.pdf,height=.72\textheight>>>
 [center]>
@@ -392,12 +439,17 @@ range of information that can be gleaned from such studies.''}
 <<<figs/genes_p_a.pdf,height=.75\textheight>>>
 [center]>
 
-==== PSG Overlap Between Species Groups and Filters ====
+==== PSG Overlap Between Species Groups ====
 
 <[center]
-<<<figs/psg_venns.pdf,height=.75\textheight>>>
+<<<figs/psg_venns.pdf,clip,trim=0 20cm 0 0,width=.9\linewidth>>>
 [center]>
 
+==== PSG Overlap Between Statistical Methods ====
+
+<[center]
+<<<figs/psg_venns.pdf,clip,trim=0 0 0 20cm,width=.9\linewidth>>>
+[center]>
 
 === Comparison to Previously-Published Studies ===
 
@@ -523,6 +575,67 @@ With sitewise estimates, a more balanced picture arises
 
 === Conclusions and Future Work ===
 
-==== Blah Blah ====
+==== Questions: Do We Have Answers Now? ====
+
+* Are low-coverage genomes a deal-breaker?
+** Likely not
+** With appropriate (read: laborious) filtering applied
+* How much power comes from additional branch length?
+** Plenty (Cf. sitewise p-value plots)
+* Do different mammalian orders show similar or different patterns?
+** Initially appears to be the case
+*** Primates/Laurasiatheria:  "high" signal for pos-sel
+*** Glires: "low" signal
+** However, conflating factors abound
+*** \Ne, branch length, genome quality
+
+==== Future Work ====
+
+* Surprising lack of correspondance between studies
+* More transparent, direct comparisons would aid awareness
+** Goal: a reference database of evolutionary estimates in mammals
+** Examples exist (e.g. Selectome), but somewhat lackluster
+* Important factors:
+** Alignment error
+** Species sampling
+** Methods and models
+
+\vspace{.3cm}
+
+* Better understanding of the connection between \Ne and between-species divergence
+* Corroborate the distribution of fitness effects (DFE) in population vs.\ divergence studies
+* Use simulations to critically evaluate species group differences
 
 ==== Acknowledgements ====
+* People
+** Goldman Group
+** Ensembl Compara (esp. Albert and Javier)
+** Collaborators (Broad Institute, for all the genes)
+* Money
+** Gates Cambridge Trusts
+** EMBL-EBI
+* Time
+** Thanks for yours :)
+
+\vspace{.3cm}
+{\tiny Note: this presentation was made with \LaTeX, Beamer + Wiki2Beamer}
+
+{\tiny {{http://github.com/gjuggler/talk-pdoc-seminar}}}
+
+==== Alignment Error: Not a Significant Concern ====
+
+<[center]
+<<<figs/fig4.pdf,height=.7\textheight>>>
+[center]>
+
+==== Method Choice: Not a Significant Concern ====
+
+<[center]
+<<<figs/fig2.pdf,height=.7\textheight>>>
+[center]>
+
+==== GC Content	: Still a Concern ====
+
+<[center]
+<<<figs/sorted_sites_gc.pdf,height=.7\textheight>>>
+[center]>
