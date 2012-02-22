@@ -1,0 +1,78 @@
+% $Header: /Users/joseph/Library/texmf/tex/latex/beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 90e850259b8b 2007/01/28 20:48:30 tantau $
+
+\documentclass{beamer}
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\mode<presentation>
+{
+  %\usetheme{CambridgeUS}
+  \usetheme{Copenhagen}
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[scaled=0.9]{helvet}
+\usepackage{courier}
+\usepackage{xspace}
+
+\newcommand{\fn}[1]{{\tiny \textcolor{gray}{#1}}}
+\newcommand{\dnds}{$d$N/$d$S\xspace}
+\newcommand{\dN}{$d$N\xspace}
+\newcommand{\dS}{$d$S\xspace}
+\newcommand{\omg}{$\omega$\xspace}
+\newcommand{\Ne}{N$_E$\xspace}
+
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{section in toc}[square]
+
+\title{Positive Selection in Mammals}
+\subtitle{When, where, why?}
+
+\author{Gregory Jordan}
+\institute{\includegraphics[height=1.5cm]{figs/goldman_logo.png}
+\vspace{.3cm}
+
+Goldman Group | EMBL-EBI}
+\date[P-doc Seminar 2012]{EBI Postdoc Seminar, February 2012}
+
+\pgfdeclareimage[height=0.5cm]{university-logo}{figs/goldman_logo.png}
+\logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\input{greg-seminar-include.txt}
+
+\end{document}
+
+

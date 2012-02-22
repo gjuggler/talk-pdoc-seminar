@@ -1,0 +1,528 @@
+<[nowiki]
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+[nowiki]>
+	
+== Background  ==
+
+=== Mammalian Genomics ===
+
+==== Evolutionary History of Mammals ====
+<[columns]
+
+[[[.4\linewidth]]]
+<[center]
+<<<figs/mammals_10k.pdf,height=.6\textheight>>>
+
+\fn{adapted from Haussler et al. \emph{J Hered} 2009}
+[center]>
+
+[[[.6\linewidth]]]
+* Common ancestor 165-170 Mya 
+* 100-85 Mya -- major extant orders have diverged
+* History affects tree shape:
+** Long external branches
+** Deep but short internal branches
+** More mammalian genomes ==> good bang for the buck
+[columns]>
+
+==== Evolutionary History of Mammals ====
+
+<[columns]
+
+[[[.4\linewidth]]]
+<[center]
+<<<figs/ancestral_primate.png,height=.4\textheight>>>
+
+Sketch of a possible Cretaceous primate ancestor (~80 Mya) 
+
+\fn{adapted from  Martin et al.\ (2007) \emph{Folia Primatol}}
+[center]>
+
+[[[.6\linewidth]]]
+* Ancestral mammals were likely:
+** Smaller than today
+** Largely insectivorous
+* General trend towards larger body, more specialized niche
+* Life history can affect molecular evolution
+** Body size ==> mutation rate
+** Sexual behavior ==> sexual dimorphism, adaptation of gametogenesis genes
+
+[columns]>
+
+==== Mammalian Genomes ====
+<[columns]
+
+[[[.6\linewidth]]]
+* Mammalian genomes are big
+** 2.5-4.5 Gb of DNA, 20-80 chromosomes
+* Relatively extensive structural evolution
+** Chromosomal rearrangements
+** Gene family expansion / contractions
+** Transposable elements
+* Stable set of core genes
+** ~20,000 genes
+** 80\% one-to-one with mouse, 82\% detectable homology with platypus
+
+[[[.4\linewidth]]]
+<[center]
+<<<figs/chromosomes.png,angle=90,height=.6\textheight>>>
+
+\fn{Wikipedia, public domain.}
+[center]>
+
+[columns]>	   
+
+==== Mammalian Genomics ====
+<[columns]
+[[[.4\linewidth]]]
+<[center]
+<<<figs/vitruvian_man.jpg,height=.4	\textheight>>>
+\vspace{.3cm}
+<<<figs/mouse.jpg,height=.25\textheight>>>
+
+\fn{Wikipedia, public domain / CC-share-alike.}
+[center]>
+
+[[[.6\linewidth]]]
+* First human (2001)
+* Then, mouse (2002)
+* ... and rat (2004), chimpanzee, dog (2005), rhesus (2007), platypus (2008), cow, horse (2009), orangutan (2011)
+* Big papers, major insights (5\% conserved, genome-wide \dnds, TE dynamics)
+
+[columns]>	   
+
+==== A quote ====
+\vspace{.3cm}
+
+\begin{exampleblock}{}
+  {\large ``Genome comparison is a powerful tool for discovery. It can reveal
+unknown---and even unsuspected---biological functions, by sifting the
+records of evolutionary experiments that have occurred over 100 years
+or over 100 million years. The \underline{\hspace*{1cm}} genome sequence illustrates the
+range of information that can be gleaned from such studies.''}
+  \vskip5mm
+  {\tiny K. Lindblad-Toh et al. (2005). Genome sequence, comparative analysis and haplotype structure of the domestic dog.}
+\end{exampleblock}
+\begin{quote}
+\end{quote}
+
+==== The Mammalian Genome Project ====
+<[columns]
+[[[.4\linewidth]]]
+<[center]
+<<<figs/mammals_29.pdf,height=.7\textheight>>>
+
+\fn{from  Lindblad-Toh et al.\ (2011) \emph{Nature}}
+[center]>
+
+[[[.6\linewidth]]]
+* Massively increase sequenced branch length
+* Emphasis on \emph{increased power} resulting from added sequence
+* Project was comparative from the start
+* BUT: genomes are low-quality (mean 2x read depth, ~85\% of genome covered)
+[columns]>
+
+=== Molecular Evolution and Codon Models ===
+
+==== Mutation and Selection ====
+
+* DNA mutations occur randomly
+** in humans: $1x10^-8$ mutations per site per generation, or 70 per person (((Keightley, PD. (2012) \emph{Genetics} 190: 295-304)))
+* Over time, \emph{Natural selection} in a population:
+*# removes deleterious alleles
+*# promotes beneficial alleles
+* To detect beneficial / deleterious alleles: compare evolutionary rate to a \emph{neutral} reference
+* Same principle underlying:
+*# GERP / PhastCons elements
+*# Human-accelerated regions
+*# \dnds in protein-coding genes
+
+==== Natural Selection in Proteins ====
+
+<[center]
+<<<figs/genetic_code.png,height=.3\textheight>>>
+[center]>
+
+* Degeneracy of genetic code
+** "silent" mutations ==> \emph{neutral} reference
+* Detect non-neutral selection acting on protein-altering mutations
+* Compare nonsynonymous rate (\dN) to synonymous rate (\dS)
+** \dN $\approx$ \dS ==> neutral evolution
+** \dN $<$ \dS ==> conservation / negative selection
+** \dN $>$ \dS ==> positive selection
+
+==== Detecting Selection with Codon Models ====
+
+<[center]
+<<<figs/codon_model.png,width=.95\linewidth>>>
+[center]>
+
+* Model the evolution of DNA sequences in terms of codons
+** Incorporate \omg$=$\dnds as a model parameter
+** Find parameter values which best fit the data (sequence alignment)
+* Likelihood ratio tests (LRTs) for testing when \omg $\not=$ 1 produce:
+** The strength of positive or purifying selection (\omg)
+** The strength of \emph{evidence} for said selection
+
+==== Reality Check ====
+
+* Wait... why are we interested in positive selection anyway?
+
+==== Previous Genome-Wide Studies ====
+
+* 2003, 2005: scans in human-chimp-mouse and human-chimp using LRTs
+
+<[columns]
+[[[.5\linewidth]]]
+<[center]
+<<<figs/rhesus_tree.png,height=.25\textheight>>>
+[center]>
+	
+* Rhesus genome analysis (2007) - LRTs for positive selection in 6 mammalian genomes
+
+[[[.5\linewidth]]]
+<[center]
+<<<figs/kosiol_tree.png,height=.3\textheight>>>
+[center]>
+	
+* Kosiol et al. (2008) - LRTs	in 6 mammalian genomes
+
+[columns]>
+
+==== Patterns of Positive Selection ====
+
+* Found many positively-selected genes (PSGs) related to:
+** Sensory perception (olfaction, hearing)
+** Apoptosis and spermatogenesis
+** Iron binding and keratin formation
+\vspace{.3cm}
+* Presumed causative factors:
+** Host-pathogen "evolutionary arms race"
+** Sexual selection / genetic conflict
+** Functional adaptations (gene- or organism- level)
+
+==== The Major Difference Now: Scale  ====
+<[center]
+<<<figs/tree_sizes.pdf,width=1\linewidth>>>
+[center]>
+
+==== Questions to be Investigated ====
+
+* Technical questions:
+** Are low-coverage genomes a deal-breaker?
+** How much power comes from additional branch length?
+* Biological questions:
+** Do different mammalian orders show similar or different patterns?
+
+== Data Collection ==
+
+=== Gene Trees ===
+
+==== Ancient Duplications in Ensembl Trees ====
+<[columns]
+[[[.5\linewidth]]]
+<[center]
+<<<figs/ensembl_tree_a.pdf,height=.7\textheight>>>
+[center]>
+
+[[[.5\linewidth]]]
+<[center]
+<<<figs/ensembl_tree_b.pdf,height=.7\textheight>>>
+[center]>
+
+[columns]>
+
+==== Ancient Duplications in Ensembl Trees ====
+
+<[center]
+<<<figs/hist_ens_roots.pdf,width=.95\linewidth>>>
+[center]>
+
+==== Identifying "Largely-Orthologous Trees" with Taxonomic Criteria  ====
+
+<[center]
+<<<figs/ensembl_tree_b.pdf,height=.7\textheight>>>
+[center]>
+
+==== "Largely-Orthologous Trees": Results ====
+
+<[center]
+<<<figs/hist_euth_roots.pdf,width=.85\linewidth>>>
+[center]>
+
+* 16,477 largely-orthologous trees in Eutherian mammals
+* Smooth distribution of tree sizes
+** "Long tail" of trees with family expansions
+
+==== Genome-Specific Duplication and Loss Patterns ====
+
+<[center]
+<<<figs/ortholog_euth_dups.pdf,height=.7\textheight>>>
+[center]>
+
+=== Data Filtering ===
+
+==== Filtering on Sequence Quality ====
+
+<[center]
+<<<figs/qual_filter_hist.pdf,height=.8\textheight>>>
+[center]>
+
+==== Removing Apparent Paralogs  ====
+
+<[center]
+<<<figs/mammals_paralogs_scatter.pdf,width=.85\linewidth>>>
+[center]>
+
+* Why remove paralogs?
+** "Split" paralogs: erroneous annotations
+** Elevated adaptive evolution after duplication-divergence
+
+==== Clusters of Nonsynonymous Mutations: Example ====
+
+<[center]
+<<<figs/mammals_cluster_subs.pdf,width=.9\linewidth>>>
+[center]>
+
+==== Clusters of Nonsynonymous Mutations: Results ====
+<[columns]
+[[[.25\linewidth]]]
+<[center]
+<<<figs/species_tree.pdf,height=.6\textheight>>>
+[center]>
+
+[[[.75\linewidth]]]
+<[center]
+<<<figs/wcs_15_int.pdf,height=.45\textheight>>>
+[center]>
+
+[columns]>
+
+==== Clusters of Nonsynonymous Mutations: Results ====
+<[columns]
+[[[.25\linewidth]]]
+<[center]
+<<<figs/species_tree.pdf,height=.6\textheight>>>
+[center]>
+
+[[[.75\linewidth]]]
+<[center]
+<<<figs/wcs_15_ext.pdf,height=.7\textheight>>>
+[center]>
+
+[columns]>
+
+==== Additional Filters ====
+
+<[center]
+<<<figs/qc_hist_mammals.pdf,width=.9\linewidth>>>
+[center]>
+
+== Analysis and Results ==
+
+=== Global Distributions of Sitewise Estimates ===
+
+==== Global Distribution of dN/dS Mammals ====
+
+<[center]
+<<<figs/global_dist_6.pdf,width=.95\linewidth>>>
+[center]>
+* Ca. 6M protein-coding sites
+* ML \omg estimate
+* Lower / upper bounds
+
+==== Global Distributions of dN/dS in Ten Species Groups ====
+<[columns]
+[[[.45\linewidth]]]
+<[center]
+<<<figs/global_distributions.pdf,clip,trim=0 23cm 0 0,height=.6\textheight>>>
+[center]>
+
+[[[.45\linewidth]]]
+<[center]
+<<<figs/global_distributions.pdf,clip,trim=0 0 0 20cm,height=.6\textheight>>>
+[center]>
+
+[columns]>
+
+==== Sitewise p-values for Positive Selection ====
+<[columns]
+[[[.5\linewidth]]]
+<[center]
+<<<figs/pset_pvals.pdf,clip,trim=0 27cm 0 0,height=.5\textheight>>>
+[center]>
+
+[[[.5\linewidth]]]
+<[center]
+<<<figs/pset_pvals.pdf,clip,trim=0 0 0 27cm,height=.5\textheight>>>
+[center]>
+
+[columns]>
+
+=== Combining Sitewise Estimates Across Genes and Domains ===
+
+==== The Mammalian Superorders ====
+<[center]
+<<<figs/tree_sizes_2.pdf,height=.72\textheight>>>
+[center]>
+
+==== Gene-by-Gene \dnds in Species Groups --- Effecs of \Ne ====
+
+<[center]
+<<<figs/genes_p_g.pdf,height=.75\textheight>>>
+[center]>
+
+==== Gene-by-Gene \dnds in Species Groups --- Effecs of \Ne ====
+
+<[center]
+<<<figs/genes_g_l.pdf,height=.75\textheight>>>
+[center]>
+
+==== Gene-by-Gene \dnds in Species Groups --- Effecs of \Ne ====
+
+<[center]
+<<<figs/genes_p_a.pdf,height=.75\textheight>>>
+[center]>
+
+==== PSG Overlap Between Species Groups and Filters ====
+
+<[center]
+<<<figs/psg_venns.pdf,height=.75\textheight>>>
+[center]>
+
+
+=== Comparison to Previously-Published Studies ===
+
+==== PSG Overlap Between Different Studies ====
+
+<[center]
+<<<figs/pub_psg_venn.pdf,width=.95\linewidth>>>
+[center]>
+
+==== ROC Plot --- Enrichment for Strongest PSGs ====
+
+<[center]
+<<<figs/psg_rocs.pdf,height=.75\textheight>>>
+[center]>
+
+%==== Table --- Enrichment for Functional Groups ====
+%<[center]
+%<<<figs/psg_table.pdf,height=.7\textheight>>>
+%[center]>
+
+==== Table --- Enrichment for Functional Groups ====
+
+<[center]
+<<<figs/go_1.png,height=.73\textheight>>>
+[center]>
+
+==== Table --- Enrichment for Functional Groups ====
+
+<[center]
+<<<figs/go_2.png,clip,trim=0 0 15cm 0,height=.3\textheight>>>
+[center]>
+
+==== Table --- Enrichment for Positively-Selected Protein Domains ====
+<[center]
+<<<figs/psg_table_3.pdf,clip,trim=0 4.1cm 4cm 0,width=.95\linewidth>>>
+[center]>
+
+==== Table --- Enrichment for Positively-Selected Protein Domains ====
+<[center]
+<<<figs/psg_table_3.pdf,clip,trim=0 0 4cm 8cm,width=.95\linewidth>>>
+[center]>
+
+
+==== Putative Gene Conversion between Nearby Paralogous Pairs ====
+
+<[center]
+<<<figs/psg_table_2.pdf,height=.7\textheight>>>
+[center]>
+
+
+==== Case Study: Mannose-Binding Lectin 2 ====
+
+<[columns]
+
+[[[.4\linewidth]]]
+<[center]
+<<<figs/mbl2_fig.jpg,height=.5\textheight>>>
+
+[center]>
+
+[[[.6\linewidth]]]
+* Collectin family member
+** Binds carbohydrates of invading pathogens
+** Facilitates phagocytosis, activates complement pathway
+* High frequencies of collagen-disrupting alleles
+** At odds with supposed important immune function
+** Recent selection favoring low MBL levels?
+** Longer-term host-immune conflict?
+[columns]>
+
+==== Case Study: Mannose-Binding Lectin 2 ====
+\vspace{.3cm}
+
+\begin{exampleblock}{}
+  {\large ``MBL2 is well conserved in agreement with its important role in the immune system.''}
+  \vskip5mm
+  {\tiny Verga F et al. (2004). Evolution of the mannose-binding lectin gene in primates. \emph{Genes and Immunity}, 5, 653-661.}
+\end{exampleblock}
+\begin{quote}
+\end{quote}
+
+But...
+\vspace{.3cm}
+
+\begin{exampleblock}{}
+  {\large ``The evolutionary neutrality of MBL2 strongly supports [...] that this lectin is largely redundant in host human defences''}
+  \vskip5mm
+  {\tiny Verdu P et al. (2006). Evolutionary insights into the high worldwide prevalence of \emph{MBL2} deficiency alleles. \emph{Human Molecular Genetics}, 15, 2650-2658.}
+\end{exampleblock}
+\begin{quote}
+\end{quote}
+
+==== Case Study: Mannose-Binding Lectin 2 ====
+
+With sitewise estimates, a more balanced picture arises
+
+==== Case Study: Mannose-Binding Lectin 2 ====
+
+<[center]
+<<<figs/mbl2.pdf,crop,trim=0 0 100cm 0,height=.7\textheight>>>
+[center]>
+
+
+==== Case Study: Mannose-Binding Lectin 2 ====
+
+<[center]
+<<<figs/mbl2.pdf,crop,trim=0 0 50cm 0,width=.9\linewidth>>>
+[center]>
+
+==== Case Study: Mannose-Binding Lectin 2 ====
+
+<[center]
+<<<figs/mbl2.pdf,crop,trim=0 0 0 0,width=.95\linewidth>>>
+[center]>
+
+* Large number of purifying sites; \emph{MBL2} is functional across mammals
+** Strongest conservation tract within collagen domain
+* Some regions show positive selection
+** No overlap with location of human SNPs (starred)
+** Potential protein-protein or protein-ligand interacting regions
+
+== Wrap-up ==
+
+=== Conclusions and Future Work ===
+
+==== Blah Blah ====
+
+==== Acknowledgements ====
